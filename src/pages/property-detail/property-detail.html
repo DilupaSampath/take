@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Property</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="property.id">
+        <img src="{{property.picture}}"/>
+        <ion-card-content>
+            <h2 class="card-title">{{property.name}}</h2>
+            <p>{{property.type}}</p>
+            <p>{{property.contact}}</p>
+        </ion-card-content>
+        <ion-list>
+
+            <ion-item>
+                <ion-icon item-left name="ios-home"></ion-icon>
+                <h3>Address</h3>
+                <ion-note item-right>{{property.address}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="md-trending-up"></ion-icon>
+                <h3>Experience</h3>
+                <ion-note item-right>{{property.experience}}</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-icon item-left name="md-thumbs-up" style="color:green"> <ion-note item-right>{{20}}</ion-note>  </ion-icon>
+               
+                <ion-icon item-right name="md-thumbs-down" style="color:red">  <ion-note item-right>{{3}}</ion-note> </ion-icon>
+              
+
+            </ion-item>
+
+            <button ion-item (click)="openBrokerDetail(property.name)">
+                <!-- <ion-avatar item-left>
+                    <img src="{{property.broker.picture}}"/>
+                </ion-avatar>
+                <h2>{{property.broker.name}}</h2>
+                <p>{{property.broker.title}}</p> -->
+            </button>
+        </ion-list>
+
+        <ion-item>
+            <button ion-button icon-left (click)="favorite(property)" clear item-left>
+                <ion-icon name="ios-text"></ion-icon>
+                Favorite
+            </button>
+            <button ion-button icon-left (click)="share(property)" clear item-right>
+                <ion-icon name="share"></ion-icon>
+                Share
+            </button>
+        </ion-item>
+
+    </ion-card>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar style="    box-shadow: -2px 9px 14px #0c0c0c;">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Welcome to
+            <strong style="color: orange"> EasyPooky</strong>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-slides style="background-color: #0892E3">
+
+
+
+
+        <!-- <p>Your dream house is just a few taps away! Select Properties in the menu to start your search.</p> -->
+
+
+        <ion-card style="height: 60px;box-shadow: 12px 13px 13px #352F48;position: absolute">
+
+            <ion-item>
+                <ion-icon name="notifications"></ion-icon>
+                Work Requests
+                <ion-badge item-end>10</ion-badge>
+            </ion-item>
+
+        </ion-card>
+        <ion-card class="table" style="box-shadow: 12px 13px 13px #352F48;    margin-top: 89px">
+            <ion-content padding>
+                <ion-grid text-center style="margin: 3;">
+                  <ion-row  wrap style="margin: -16px;">
+                    <ion-col *ngFor="let item of workers"  width-40> <ion-img width="70" height="80" src="item.url"  (click)="openPage()"></ion-img> <p> {{item.name}}</p></ion-col>
+                    
+                  </ion-row>
+                </ion-grid>
+              </ion-content>
+        </ion-card>
+
+        <!-- <button ion-button (tap)="addNote()"></button> -->
+
+    </ion-slides>
+
+</ion-content>
